@@ -1,0 +1,4164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="loginPage" class="login-page">
+
+        <div class="login-visual">
+
+            <div class="login-visual-overlay"></div>
+
+            <div class="login-brand">
+
+                <div class="brand-small">
+                    JMGQS QUALITY SYSTEMS
+                </div>
+
+                <h2>
+                    Driving Quality.<br>
+                    Delivering Excellence.
+                </h2>
+            </div>
+        </div>
+
+
+        <div class="login-panel">
+
+            <div class="login-card">
+
+                <div class="jmgqs-logo">
+                    <img src="assets/jmgqs-logo.png" alt="JMGQS logo">
+                </div>
+
+                <div class="login-title-area">
+
+                    <h1>
+                        Audit Management System
+                    </h1>
+
+                    <div class="login-title-line">
+                        <span></span>
+                        <i></i>
+                        <span></span>
+                    </div>
+
+                    <p>
+                        Sign in to continue
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+
+                        <label>
+                            Username
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="username"
+                            placeholder="Enter your username"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Password
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn login-btn"
+                    >
+                        SIGN IN
+                    </button>
+
+
+                    <div
+                        id="loginMessage"
+                        class="login-message"
+                    ></div>
+
+                </form>
+                <div class="login-security">
+
+                    <span>SECURE</span>
+                    <b>|</b>
+                    <span>RELIABLE</span>
+                    <b>|</b>
+                    <span>CONFIDENTIAL</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         APPLICATION
+    ====================================================== -->
+
+    <div id="appPage" class="app-page hidden">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <div class="header-logo">
+                    <img src="assets/jmgqs-logo.png" alt="JMGQS logo">
+                </div>
+
+                <div class="header-title">
+
+                    <strong>
+                        Audit Management System
+                    </strong>
+
+                    <span>
+                        JSW Motors
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="user-info">
+
+                    <div
+                        class="user-avatar"
+                        id="userAvatar"
+                    >
+                        U
+                    </div>
+
+                    <div class="user-details">
+
+                        <strong id="loggedUser">
+                            User
+                        </strong>
+
+                        <span>
+                            Auditor
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="logoutBtn"
+                    class="logout-btn"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             APPLICATION BODY
+        ================================================== -->
+
+        <div class="application-body">
+
+
+            <!-- =================================================
+                 SIDEBAR
+            ================================================== -->
+
+            <aside class="sidebar">
+
+                <div class="sidebar-section">
+
+
+                    <div
+                        class="sidebar-item active"
+                        data-page="dashboard"
+                    >
+
+                        <span class="sidebar-icon">
+                            ⌂
+                        </span>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="sidebar-item"
+                        data-page="create"
+                    >
+
+                        <span class="sidebar-icon">
+                            ＋
+                        </span>
+
+                        <span>
+                            Create New Audit
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="#"
+                        class="sidebar-link"
+                        data-page="auditRecords"
+                    >
+
+                        <span class="sidebar-icon">
+                            ▤
+                        </span>
+
+                        <span>
+                            Audit Records
+                        </span>
+
+                    </a>
+
+                    <div
+                        class="sidebar-item"
+                        data-page="actions"
+                    >
+
+                        <span class="sidebar-icon">
+                            ✓
+                        </span>
+
+                        <span>
+                            Actions
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="sidebar-item"
+                        data-page="reports"
+                    >
+
+                        <span class="sidebar-icon">
+                            ▥
+                        </span>
+
+                        <span>
+                            Reports
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="sidebar-bottom">
+
+                    <div class="sidebar-label">
+                        AUDIT MODULES
+                    </div>
+
+
+                    <div class="module-item">
+
+                        <span class="module-dot ims-dot"></span>
+                        IMS Audit
+
+                    </div>
+
+
+                    <div class="module-item">
+
+                        <span class="module-dot process-dot"></span>
+                        Process Audit
+
+                    </div>
+
+
+                    <div class="module-item">
+
+                        <span class="module-dot product-dot"></span>
+                        Product Audit
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+
+
+            <!-- =================================================
+                 MAIN CONTENT
+            ================================================== -->
+
+            <main class="main-content">
+
+
+                <!-- =================================================
+                     DASHBOARD
+                ================================================== -->
+
+                <section
+                    id="dashboardPage"
+                    class="content-page"
+                >
+
+                    <div class="page-heading">
+
+                        <div>
+
+                            <h1>
+                                Dashboard
+                            </h1>
+
+                            <p>
+                                Overview of audit activities and findings
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="primary-btn create-audit-btn"
+                            id="createAuditTopBtn"
+                        >
+                            + Create New Audit
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="summary-grid">
+
+
+                        <div class="summary-card">
+
+                            <div class="summary-icon blue">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Total Audits
+                                </span>
+
+                                <strong id="totalAudits">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="summary-card">
+
+                            <div class="summary-icon red">
+                                !
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Open Findings
+                                </span>
+
+                                <strong id="openFindings">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="summary-card">
+
+                            <div class="summary-icon yellow">
+                                ↻
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    In Progress
+                                </span>
+
+                                <strong id="progressFindings">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="summary-card">
+
+                            <div class="summary-icon green">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Closed Findings
+                                </span>
+
+                                <strong id="closedFindings">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="dashboard-grid">
+
+
+                        <div class="dashboard-card recent-card">
+
+                            <div class="card-header">
+
+                                <div>
+
+                                    <h2>
+                                        Recent Audits
+                                    </h2>
+
+                                    <p>
+                                        Latest audit activities
+                                    </p>
+
+                                </div>
+
+                                <button
+                                    class="text-btn"
+                                    id="viewRecordsBtn"
+                                >
+                                    View All
+                                </button>
+
+                            </div>
+
+
+                            <div class="table-container">
+
+                                <table>
+
+                                    <thead>
+
+                                        <tr>
+
+                                            <th>
+                                                Audit ID
+                                            </th>
+
+                                            <th>
+                                                Audit Type
+                                            </th>
+
+                                            <th>
+                                                Audit Date
+                                            </th>
+
+                                            <th>
+                                                Auditor
+                                            </th>
+
+                                            <th>
+                                                Status
+                                            </th>
+
+                                        </tr>
+
+                                    </thead>
+
+
+                                    <tbody id="recentAuditsTable">
+
+                                        <tr>
+
+                                            <td
+                                                colspan="5"
+                                                class="empty-state"
+                                            >
+                                                No audit records available
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="dashboard-card">
+
+                            <div class="card-header">
+
+                                <div>
+
+                                    <h2>
+                                        Audit Overview
+                                    </h2>
+
+                                    <p>
+                                        Audits by category
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="audit-overview">
+
+
+                                <div class="overview-row">
+
+                                    <div class="overview-name">
+
+                                        <span class="overview-dot ims-dot"></span>
+
+                                        IMS Audit
+
+                                    </div>
+
+                                    <strong id="imsCount">
+                                        0
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="overview-row">
+
+                                    <div class="overview-name">
+
+                                        <span class="overview-dot process-dot"></span>
+
+                                        Process Audit
+
+                                    </div>
+
+                                    <strong id="processCount">
+                                        0
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="overview-row">
+
+                                    <div class="overview-name">
+
+                                        <span class="overview-dot product-dot"></span>
+
+                                        Product Audit
+
+                                    </div>
+
+                                    <strong id="productCount">
+                                        0
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="dashboard-analysis-grid">
+
+                        <div class="dashboard-card analysis-card">
+                            <div class="card-header"><div><h2>NC Trends</h2><p>Findings by month</p></div></div>
+                            <div id="ncTrendBars" class="analysis-bars"></div>
+                        </div>
+
+                        <div class="dashboard-card analysis-card">
+                            <div class="card-header"><div><h2>Monthly Analysis</h2><p>Audits by month</p></div></div>
+                            <div id="monthlyAnalysisBars" class="analysis-bars"></div>
+                        </div>
+
+                        <div class="dashboard-card analysis-card">
+                            <div class="card-header"><div><h2>Total NCs</h2><p>Findings by audit source</p></div></div>
+                            <div id="totalNcBars" class="analysis-bars"></div>
+                        </div>
+
+                        <div class="dashboard-card analysis-card">
+                            <div class="card-header"><div><h2>Agency-wise Distribution</h2><p>Findings by agency</p></div></div>
+                            <div id="agencyDistributionBars" class="analysis-bars"></div>
+                        </div>
+
+                        <div class="dashboard-card analysis-card">
+                            <div class="card-header"><div><h2>Agency-wise Closure</h2><p>Closed findings by agency</p></div></div>
+                            <div id="agencyClosureBars" class="analysis-bars"></div>
+                        </div>
+
+                        <div class="dashboard-card analysis-card">
+                            <div class="card-header"><div><h2>Agency-wise Ageing</h2><p>Open ageing by agency</p></div></div>
+                            <div id="agencyAgeingBars" class="analysis-bars"></div>
+                        </div>
+
+                        <div class="dashboard-card analysis-card">
+                            <div class="card-header"><div><h2>Priority-wise Ageing</h2><p>Open findings by age</p></div></div>
+                            <div id="ageingBars" class="analysis-bars"></div>
+                        </div>
+
+                        <div class="dashboard-card analysis-card">
+                            <div class="card-header"><div><h2>4M Distribution</h2><p>Process categories</p></div></div>
+                            <div id="fourMBars" class="analysis-bars"></div>
+                        </div>
+
+                        <div class="dashboard-card analysis-card">
+                            <div class="card-header"><div><h2>Shop / Station Analysis</h2><p>Records by shop and station</p></div></div>
+                            <div id="shopStationBars" class="analysis-bars"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-card quick-actions-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h2>
+                                    Quick Actions
+                                </h2>
+
+                                <p>
+                                    Start your next activity
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+
+                            <button
+                                class="quick-action"
+                                id="quickCreateAudit"
+                            >
+
+                                <div class="quick-icon">
+                                    ＋
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Create New Audit
+                                    </strong>
+
+                                    <span>
+                                        Start a new audit
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+
+                            <button
+                                class="quick-action"
+                                id="quickRecords"
+                            >
+
+                                <div class="quick-icon">
+                                    ▤
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Audit Records
+                                    </strong>
+
+                                    <span>
+                                        View previous audits
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+
+                            <button
+                                class="quick-action"
+                                id="quickActions"
+                            >
+
+                                <div class="quick-icon">
+                                    ✓
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Pending Actions
+                                    </strong>
+
+                                    <span>
+                                        Review open actions
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     CREATE NEW AUDIT
+                ================================================== -->
+
+                <section
+                    id="createPage"
+                    class="content-page hidden"
+                >
+
+                    <div class="page-heading">
+
+                        <div>
+
+                            <h1>
+                                Create New Audit
+                            </h1>
+
+                            <p>
+                                Select the audit module you want to create
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="audit-selection-grid">
+
+
+                        <button
+                            class="audit-selection-card ims-selection"
+                            data-audit="ims"
+                        >
+
+                            <div class="selection-icon">
+                                IMS
+                            </div>
+
+                            <div class="selection-content">
+
+                                <h2>
+                                    IMS Audit
+                                </h2>
+
+                                <p>
+                                    Conduct an Integrated Management System
+                                    audit and manage findings through action
+                                    and auditor review.
+                                </p>
+
+                                <span class="selection-link">
+                                    Start IMS Audit →
+                                </span>
+
+                            </div>
+
+                        </button>
+
+
+
+                        <button
+                            class="audit-selection-card process-selection"
+                            data-audit="process"
+                        >
+
+                            <div class="selection-icon">
+                                PA
+                            </div>
+
+                            <div class="selection-content">
+
+                                <h2>
+                                    Process Audit
+                                </h2>
+
+                                <p>
+                                    Conduct process audits across shops,
+                                    lines, systems and process categories.
+                                </p>
+
+                                <span class="selection-link">
+                                    Start Process Audit →
+                                </span>
+
+                            </div>
+
+                        </button>
+
+
+
+                        <button
+                            class="audit-selection-card product-selection"
+                            data-audit="product"
+                        >
+
+                            <div class="selection-icon">
+                                PR
+                            </div>
+
+                            <div class="selection-content">
+
+                                <h2>
+                                    Product Audit
+                                </h2>
+
+                                <p>
+                                    Conduct product audits using product type,
+                                    category and audit information.
+                                </p>
+
+                                <span class="selection-link">
+                                    Start Product Audit →
+                                </span>
+
+                            </div>
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     IMS AUDITOR ENTRY PAGE
+                ================================================== -->
+
+                <section
+                    id="imsAuditorPage"
+                    class="content-page hidden"
+                >
+
+
+                    <div class="page-heading">
+
+                        <div>
+
+                            <h1>
+                                IMS Audit
+                            </h1>
+
+                            <p>
+                                Auditor — Conduct Audit & Create Finding
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="secondary-btn"
+                            id="backToCreateBtn"
+                        >
+                            ← Back
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- AUDIT INFORMATION -->
+
+                    <div class="audit-form-card">
+
+
+                        <div class="form-section-header">
+
+                            <div>
+
+                                <h2>
+                                    Audit Information
+                                </h2>
+
+                                <p>
+                                    Enter the audit and auditor details
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Observation Number
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="imsObservationNumber"
+                                    readonly
+                                >
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Audit Date
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="imsAuditDate"
+                                >
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Department
+                                    <span class="required">*</span>
+                                </label>
+
+                                <select id="imsDepartment">
+
+                                    <option value="">
+                                        Select Department
+                                    </option>
+
+                                    <option value="Production">
+                                        Production
+                                    </option>
+
+                                    <option value="ME">
+                                        ME
+                                    </option>
+
+                                    <option value="R&D">
+                                        R&D
+                                    </option>
+
+                                    <option value="SCM">
+                                        SCM
+                                    </option>
+
+                                    <option value="Quality">
+                                        Quality
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Auditee
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="imsAuditee"
+                                    placeholder="Enter auditee name"
+                                >
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Auditor
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="imsAuditor"
+                                    placeholder="Enter auditor name"
+                                >
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Process Audited
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="imsProcess"
+                                    placeholder="Enter process audited"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- OBSERVATION DETAILS -->
+
+                    <div class="audit-form-card">
+
+
+                        <div class="form-section-header">
+
+                            <div>
+
+                                <h2>
+                                    Observation Details
+                                </h2>
+
+                                <p>
+                                    Record the finding identified during the audit
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+
+                            <div class="input-group full-width">
+
+                                <label>
+                                    Statement
+                                    <span class="required">*</span>
+                                </label>
+
+                                <textarea
+                                    id="imsStatement"
+                                    rows="4"
+                                    placeholder="Enter observation / finding statement"
+                                ></textarea>
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Applicable Sub-Clause
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="imsSubClause"
+                                    placeholder="Enter applicable sub-clause"
+                                >
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Clause Requirements
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="imsClauseRequirement"
+                                    placeholder="Enter clause requirement"
+                                >
+
+                            </div>
+
+
+                            <div class="input-group full-width">
+
+                                <label>
+                                    Objective Evidence
+                                </label>
+
+                                <textarea
+                                    id="imsEvidence"
+                                    rows="4"
+                                    placeholder="Enter objective evidence"
+                                ></textarea>
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>
+                                    Classification
+                                    <span class="required">*</span>
+                                </label>
+
+                                <select id="imsClassification">
+
+                                    <option value="">
+                                        Select Classification
+                                    </option>
+
+                                    <option value="Major NC">
+                                        Major NC
+                                    </option>
+
+                                    <option value="Minor NC">
+                                        Minor NC
+                                    </option>
+
+                                    <option value="OFI">
+                                        OFI
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ACTION BUTTONS -->
+
+                    <div class="form-actions">
+
+                        <button
+                            class="secondary-btn"
+                            id="addImsFindingBtn"
+                        >
+                            ADD FINDING <span id="imsFindingCount">0</span>
+                        </button>
+
+                        <button
+                            class="secondary-btn"
+                            id="saveImsDraftBtn"
+                        >
+                            Save Draft
+                        </button>
+
+
+                        <button
+                            class="primary-btn"
+                            id="submitImsFindingBtn"
+                        >
+                            Submit Finding →
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="imsFormMessage"
+                        class="form-message"
+                    ></div>
+
+
+                </section>
+
+
+
+              <!-- =================================================
+     IMS AUDITEE ACTION PAGE
+================================================= -->
+
+<section
+    id="imsAuditeePage"
+    class="content-page hidden"
+>
+
+    <div class="page-heading">
+
+        <div>
+
+            <h1>
+                IMS Audit
+            </h1>
+
+            <p>
+                Auditee — Corrective Action
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =============================================
+         FINDING DETAILS
+    ============================================== -->
+
+    <div class="audit-form-card">
+
+        <div class="form-section-header">
+
+            <div>
+
+                <h2>
+                    Finding Details
+                </h2>
+
+                <p>
+                    Review the finding raised by the auditor
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="input-group">
+
+                <label>
+                    Observation Number
+                </label>
+
+                <input
+                    type="text"
+                    id="auditeeObservationNumber"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Audit Date
+                </label>
+
+                <input
+                    type="date"
+                    id="auditeeAuditDate"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Department
+                </label>
+
+                <input
+                    type="text"
+                    id="auditeeDepartment"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Auditee
+                </label>
+
+                <input
+                    type="text"
+                    id="auditeeName"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Auditor
+                </label>
+
+                <input
+                    type="text"
+                    id="auditeeAuditor"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Process Audited
+                </label>
+
+                <input
+                    type="text"
+                    id="auditeeProcess"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group full-width">
+
+                <label>
+                    Statement
+                </label>
+
+                <textarea
+                    id="auditeeStatement"
+                    rows="4"
+                    readonly
+                ></textarea>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Applicable Sub-Clause
+                </label>
+
+                <input
+                    type="text"
+                    id="auditeeSubClause"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Clause Requirements
+                </label>
+
+                <input
+                    type="text"
+                    id="auditeeClauseRequirement"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Classification
+                </label>
+
+                <input
+                    type="text"
+                    id="auditeeClassification"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group full-width">
+
+                <label>
+                    Objective Evidence
+                </label>
+
+                <textarea
+                    id="auditeeEvidence"
+                    rows="3"
+                    readonly
+                ></textarea>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =============================================
+         ACTION BY AUDITEE
+    ============================================== -->
+
+    <div class="audit-form-card">
+
+        <div class="form-section-header">
+
+            <div>
+
+                <h2>
+                    Action by Auditee
+                </h2>
+
+                <p>
+                    Provide the required correction and corrective action
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="input-group full-width">
+
+                <label>
+                    Immediate Action / Correction
+                    <span class="required">*</span>
+                </label>
+
+                <textarea
+                    id="immediateAction"
+                    rows="4"
+                    placeholder="Enter immediate action / correction"
+                ></textarea>
+
+            </div>
+
+
+            <div class="input-group full-width">
+
+                <label>
+                    Root Cause Analysis
+                    <span class="required">*</span>
+                </label>
+
+                <textarea
+                    id="rootCause"
+                    rows="5"
+                    placeholder="Enter root cause analysis"
+                ></textarea>
+
+            </div>
+
+
+            <div class="input-group full-width">
+
+                <label>
+                    Corrective Action
+                    <span class="required">*</span>
+                </label>
+
+                <textarea
+                    id="correctiveAction"
+                    rows="5"
+                    placeholder="Enter corrective action"
+                ></textarea>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Target Date
+                    <span class="required">*</span>
+                </label>
+
+                <input
+                    type="date"
+                    id="targetDate"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Responsibility
+                    <span class="required">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="responsibility"
+                    placeholder="Enter responsible person"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Action Completion Date
+                </label>
+
+                <input
+                    type="date"
+                    id="actionCompletionDate"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Action Status
+                    <span class="required">*</span>
+                </label>
+
+                <select id="actionStatus">
+
+                    <option value="">
+                        Select Action Status
+                    </option>
+
+                    <option value="Not Started">
+                        Not Started
+                    </option>
+
+                    <option value="In Progress">
+                        In Progress
+                    </option>
+
+                    <option value="Completed">
+                        Completed
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-group full-width">
+
+                <label>
+                    Supporting Evidence / Attachment
+                </label>
+
+                <input
+                    type="file"
+                    id="supportingEvidence"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =============================================
+         ACTION BUTTONS
+    ============================================== -->
+
+    <div class="form-actions">
+
+        <button
+            class="secondary-btn"
+            id="saveAuditeeActionBtn"
+        >
+            Save Draft
+        </button>
+
+
+        <button
+            class="primary-btn"
+            id="submitAuditeeActionBtn"
+        >
+            Submit for Auditor Verification →
+        </button>
+
+    </div>
+
+
+    <div
+        id="auditeeFormMessage"
+        class="form-message"
+    ></div>
+
+
+</section>
+  <!-- =================================================
+     IMS AUDITOR VERIFICATION PAGE
+================================================= -->
+
+<section
+    id="imsVerificationPage"
+    class="content-page hidden"
+>
+
+    <div class="page-heading">
+
+        <div>
+
+            <h1>
+                IMS Audit
+            </h1>
+
+            <p>
+                Auditor — Verification & Closure
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ================= AUDIT RECORDS HUB ================= -->
+<section id="auditRecordsHubPage" class="page-section" style="display:none;">
+
+    <div class="page-header">
+        <div>
+            <h1>Audit Records</h1>
+            <p>Select the audit record master sheet to open</p>
+        </div>
+    </div>
+
+    <div class="records-hub-grid">
+
+        <button type="button" class="records-hub-card ims-records-card" data-record-page="imsRecords">
+            <span class="records-hub-icon">IMS</span>
+            <span class="records-hub-content">
+                <strong>IMS Audit Records</strong>
+                <small>View IMS findings, actions, and verification status</small>
+            </span>
+            <span class="records-hub-arrow">&#8594;</span>
+        </button>
+
+        <button type="button" class="records-hub-card process-records-card" data-record-page="processRecords">
+            <span class="records-hub-icon">PA</span>
+            <span class="records-hub-content">
+                <strong>Process Audit Records</strong>
+                <small>View process findings, actions, and review status</small>
+            </span>
+            <span class="records-hub-arrow">&#8594;</span>
+        </button>
+
+        <button type="button" class="records-hub-card product-records-card" data-record-page="productRecords">
+            <span class="records-hub-icon">PR</span>
+            <span class="records-hub-content">
+                <strong>Product Audit Records</strong>
+                <small>Open the product audit master sheet</small>
+            </span>
+            <span class="records-hub-arrow">&#8594;</span>
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- ================= IMS AUDIT RECORDS ================= -->
+<section id="imsRecordsPage" class="page-section" style="display:none;">
+
+    <div class="page-header">
+        <div>
+            <h1>IMS Audit Records</h1>
+            <p>IMS Audit Master Sheet</p>
+        </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="records-filter-card">
+
+        <div class="filter-group">
+            <label>Search</label>
+            <input
+                type="text"
+                id="recordsSearch"
+                placeholder="Search Observation No., Auditee, Process..."
+            >
+        </div>
+
+        <div class="filter-group">
+            <label>Department</label>
+            <select id="recordsDepartment">
+                <option value="">All Departments</option>
+                <option value="Production">Production</option>
+                <option value="ME">ME</option>
+                <option value="R&D">R&D</option>
+                <option value="SCM">SCM</option>
+                <option value="Quality">Quality</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Classification</label>
+            <select id="recordsClassification">
+                <option value="">All</option>
+                <option value="Major NC">Major NC</option>
+                <option value="Minor NC">Minor NC</option>
+                <option value="OFI">OFI</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Action Status</label>
+            <select id="recordsActionStatus">
+                <option value="">All</option>
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>NC Status</label>
+            <select id="recordsNCStatus">
+                <option value="">All</option>
+                <option value="Open">Open</option>
+                <option value="Closed">Closed</option>
+            </select>
+        </div>
+
+        <button id="resetRecordsFilters" class="secondary-btn">
+            Reset
+        </button>
+
+    </div>
+
+
+    <!-- MASTER TABLE -->
+    <div class="records-card">
+
+        <div class="records-card-header">
+            <div>
+                <h2>IMS Audit Master Sheet</h2>
+                <span id="recordsCount">0 Records</span>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+
+            <table class="records-table">
+
+                <thead>
+                    <tr>
+                        <th>Observation No.</th>
+                        <th>Audit Date</th>
+                        <th>Department</th>
+                        <th>Auditee</th>
+                        <th>Auditor</th>
+                        <th>Process</th>
+                        <th>Classification</th>
+                        <th>Action Status</th>
+                        <th>Target Date</th>
+                        <th>NC Status</th>
+                        <th>Current Stage</th>
+                        <th>Last Updated</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="imsRecordsTableBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- COMPLETE FINDING VIEW -->
+    <div id="recordDetailsPanel" class="record-details-panel" style="display:none;">
+
+        <div class="details-header">
+            <div>
+                <h2>Complete Audit Finding</h2>
+                <p id="recordDetailsObservation"></p>
+            </div>
+
+            <button id="closeRecordDetails" class="secondary-btn">
+                Close
+            </button>
+        </div>
+
+
+        <!-- AUDIT INFORMATION -->
+
+        <div class="details-section">
+
+            <h3>Audit Information</h3>
+
+            <div class="details-grid">
+
+                <div>
+                    <label>Observation Number</label>
+                    <input id="detailObservationNumber" readonly>
+                </div>
+
+                <div>
+                    <label>Audit Date</label>
+                    <input id="detailAuditDate" readonly>
+                </div>
+
+                <div>
+                    <label>Department</label>
+                    <input id="detailDepartment" readonly>
+                </div>
+
+                <div>
+                    <label>Auditee</label>
+                    <input id="detailAuditee" readonly>
+                </div>
+
+                <div>
+                    <label>Auditor</label>
+                    <input id="detailAuditor" readonly>
+                </div>
+
+                <div>
+                    <label>Process Audited</label>
+                    <input id="detailProcess" readonly>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- OBSERVATION DETAILS -->
+
+        <div class="details-section">
+
+            <h3>Observation Details</h3>
+
+            <div class="details-grid">
+
+                <div class="full-width">
+                    <label>Statement</label>
+                    <textarea id="detailStatement" readonly></textarea>
+                </div>
+
+                <div>
+                    <label>Applicable Sub-Clause</label>
+                    <input id="detailSubClause" readonly>
+                </div>
+
+                <div>
+                    <label>Classification</label>
+                    <input id="detailClassification" readonly>
+                </div>
+
+                <div class="full-width">
+                    <label>Clause Requirement</label>
+                    <textarea id="detailClauseRequirement" readonly></textarea>
+                </div>
+
+                <div class="full-width">
+                    <label>Objective Evidence</label>
+                    <textarea id="detailEvidence" readonly></textarea>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- AUDITEE ACTION -->
+
+        <div class="details-section">
+
+            <h3>Auditee Action</h3>
+
+            <div class="details-grid">
+
+                <div class="full-width">
+                    <label>Immediate Action / Correction</label>
+                    <textarea id="detailImmediateAction" readonly></textarea>
+                </div>
+
+                <div class="full-width">
+                    <label>Root Cause Analysis</label>
+                    <textarea id="detailRootCause" readonly></textarea>
+                </div>
+
+                <div class="full-width">
+                    <label>Corrective Action</label>
+                    <textarea id="detailCorrectiveAction" readonly></textarea>
+                </div>
+
+                <div>
+                    <label>Target Date</label>
+                    <input id="detailTargetDate" readonly>
+                </div>
+
+                <div>
+                    <label>Responsibility</label>
+                    <input id="detailResponsibility" readonly>
+                </div>
+
+                <div>
+                    <label>Action Completion Date</label>
+                    <input id="detailCompletionDate" readonly>
+                </div>
+
+                <div>
+                    <label>Action Status</label>
+                    <input id="detailActionStatus" readonly>
+                </div>
+
+                <div class="full-width">
+                    <label>Supporting Evidence / Attachment</label>
+                    <input id="detailSupportingEvidence" readonly>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- AUDITOR VERIFICATION -->
+
+        <div class="details-section">
+
+            <h3>Auditor Verification</h3>
+
+            <div class="details-grid">
+
+                <div>
+                    <label>Effectiveness Check Date</label>
+                    <input id="detailEffectivenessDate" readonly>
+                </div>
+
+                <div>
+                    <label>NC Status</label>
+                    <input id="detailNCStatus" readonly>
+                </div>
+
+                <div class="full-width">
+                    <label>Effectiveness Remarks</label>
+                    <textarea id="detailEffectivenessRemarks" readonly></textarea>
+                </div>
+
+                <div>
+                    <label>Auditor Sign-off</label>
+                    <input id="detailAuditorSignOff" readonly>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TRACKING -->
+
+        <div class="details-section">
+
+            <h3>System Tracking</h3>
+
+            <div class="details-grid">
+
+                <div>
+                    <label>Current Stage</label>
+                    <input id="detailCurrentStage" readonly>
+                </div>
+
+                <div>
+                    <label>Last Updated</label>
+                    <input id="detailLastUpdated" readonly>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- =============================================
+         FINDING DETAILS
+    ============================================== -->
+
+    <div class="audit-form-card">
+
+        <div class="form-section-header">
+
+            <div>
+
+                <h2>
+                    Finding Details
+                </h2>
+
+                <p>
+                    Review the original audit finding
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="input-group">
+
+                <label>
+                    Observation Number
+                </label>
+
+                <input
+                    type="text"
+                    id="verifyObservationNumber"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Audit Date
+                </label>
+
+                <input
+                    type="date"
+                    id="verifyAuditDate"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Department
+                </label>
+
+                <input
+                    type="text"
+                    id="verifyDepartment"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Auditee
+                </label>
+
+                <input
+                    type="text"
+                    id="verifyAuditee"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Auditor
+                </label>
+
+                <input
+                    type="text"
+                    id="verifyAuditor"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Process Audited
+                </label>
+
+                <input
+                    type="text"
+                    id="verifyProcess"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group full-width">
+
+                <label>
+                    Statement
+                </label>
+
+                <textarea
+                    id="verifyStatement"
+                    rows="4"
+                    readonly
+                ></textarea>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Applicable Sub-Clause
+                </label>
+
+                <input
+                    type="text"
+                    id="verifySubClause"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Classification
+                </label>
+
+                <input
+                    type="text"
+                    id="verifyClassification"
+                    readonly
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =============================================
+         AUDITEE RESPONSE
+    ============================================== -->
+
+    <div class="audit-form-card">
+
+        <div class="form-section-header">
+
+            <div>
+
+                <h2>
+                    Auditee Response
+                </h2>
+
+                <p>
+                    Review the corrective action submitted by the auditee
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="input-group full-width">
+
+                <label>
+                    Immediate Action / Correction
+                </label>
+
+                <textarea
+                    id="verifyImmediateAction"
+                    rows="4"
+                    readonly
+                ></textarea>
+
+            </div>
+
+
+            <div class="input-group full-width">
+
+                <label>
+                    Root Cause Analysis
+                </label>
+
+                <textarea
+                    id="verifyRootCause"
+                    rows="4"
+                    readonly
+                ></textarea>
+
+            </div>
+
+
+            <div class="input-group full-width">
+
+                <label>
+                    Corrective Action
+                </label>
+
+                <textarea
+                    id="verifyCorrectiveAction"
+                    rows="4"
+                    readonly
+                ></textarea>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Target Date
+                </label>
+
+                <input
+                    type="date"
+                    id="verifyTargetDate"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Responsibility
+                </label>
+
+                <input
+                    type="text"
+                    id="verifyResponsibility"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Action Completion Date
+                </label>
+
+                <input
+                    type="date"
+                    id="verifyCompletionDate"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Action Status
+                </label>
+
+                <input
+                    type="text"
+                    id="verifyActionStatus"
+                    readonly
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =============================================
+         AUDITOR VERIFICATION
+    ============================================== -->
+
+    <div class="audit-form-card">
+
+        <div class="form-section-header">
+
+            <div>
+
+                <h2>
+                    Auditor Verification
+                </h2>
+
+                <p>
+                    Verify the effectiveness of the corrective action
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <div class="input-group">
+
+                <label>
+                    Effectiveness Check Date
+                    <span class="required">*</span>
+                </label>
+
+                <input
+                    type="date"
+                    id="verificationDate"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    NC Status
+                    <span class="required">*</span>
+                </label>
+
+                <select id="verificationStatus">
+
+                    <option value="">
+                        Select NC Status
+                    </option>
+
+                    <option value="Open">
+                        Open
+                    </option>
+
+                    <option value="In Progress">
+                        In Progress
+                    </option>
+
+                    <option value="Closed">
+                        Closed
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-group full-width">
+
+                <label>
+                    Effectiveness Result / Remarks
+                    <span class="required">*</span>
+                </label>
+
+                <textarea
+                    id="verificationRemarks"
+                    rows="5"
+                    placeholder="Enter effectiveness check result / remarks"
+                ></textarea>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Auditor Sign-off
+                    <span class="required">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="auditorSignOff"
+                    placeholder="Enter auditor name"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =============================================
+         VERIFICATION ACTIONS
+    ============================================== -->
+
+    <div class="form-actions">
+
+        <button
+            class="secondary-btn"
+            id="returnToAuditeeBtn"
+        >
+            ← Return to Auditee
+        </button>
+
+
+        <button
+            class="primary-btn"
+            id="completeVerificationBtn"
+        >
+            Complete Verification ✓
+        </button>
+
+    </div>
+
+
+    <div
+        id="verificationMessage"
+        class="form-message"
+    ></div>
+
+
+</section>
+<!-- =================================================
+                     RECORDS
+                ================================================== -->
+
+                <section
+                    id="recordsPage"
+                    class="content-page hidden"
+                >
+
+                    <div class="page-heading">
+
+                        <div>
+
+                            <h1>
+                                Audit Records
+                            </h1>
+
+                            <p>
+                                View and manage audit records
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="coming-soon-card">
+
+                        <div>
+                            ▤
+                        </div>
+
+                        <h2>
+                            Audit Records
+                        </h2>
+
+                        <p>
+                            This section will be connected after the
+                            audit-entry modules are completed.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     ACTIONS
+                ================================================== -->
+
+                <section
+                    id="actionsPage"
+                    class="content-page hidden"
+                >
+
+                    <div class="page-heading">
+
+                        <div>
+
+                            <h1>
+                                Actions
+                            </h1>
+
+                            <p>
+                                Track and review audit actions
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="coming-soon-card">
+
+                        <div>
+                            ✓
+                        </div>
+
+                        <h2>
+                            Action Management
+                        </h2>
+
+                        <p>
+                            Auditee action, root cause, corrective action,
+                            target date and auditor review will appear here.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     REPORTS
+                ================================================== -->
+
+                <section
+                    id="reportsPage"
+                    class="content-page hidden"
+                >
+
+                    <div class="page-heading">
+
+                        <div>
+
+                            <h1>
+                                Reports
+                            </h1>
+
+                            <p>
+                                Audit reports and analytics
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="coming-soon-card">
+
+                        <div>
+                            ▥
+                        </div>
+
+                        <h2>
+                            Reports
+                        </h2>
+
+                        <p>
+                            Reporting and analytics will be added after
+                            audit records are connected.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+            
+        <!-- ================= PROCESS AUDIT - AUDITOR ENTRY ================= -->
+<section id="processAuditorPage" class="page-section" style="display:none;">
+
+    <div class="page-header">
+        <div>
+            <h1>Process Audit</h1>
+            <p>Auditor Finding Entry</p>
+        </div>
+    </div>
+
+    <!-- AUDIT INFORMATION -->
+    <div class="form-card">
+
+        <div class="form-card-header">
+            <div>
+                <h2>Audit Information</h2>
+                <p>Enter the basic details of the process audit</p>
+            </div>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Auditor Name <span class="required">*</span></label>
+                <input
+                    type="text"
+                    id="processAuditorName"
+                    placeholder="Enter auditor name"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Audit Date <span class="required">*</span></label>
+                <input
+                    type="date"
+                    id="processAuditDate"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Process Audit Type <span class="required">*</span></label>
+                <select id="processAuditType">
+                    <option value="">Select Audit Type</option>
+                    <option value="System Audit">System Audit</option>
+                    <option value="Customer Focused Audit">Customer Focused Audit</option>
+                    <option value="Regulatory Audit">Regulatory Audit</option>
+                    <option value="Process Parameters Audit">Process Parameters Audit</option>
+                    <option value="Manufacturing Readiness Audit">
+                        Manufacturing Readiness Audit
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Shop <span class="required">*</span></label>
+                <select id="processShop">
+                    <option value="">Select Shop</option>
+                    <option value="BIW Shop">BIW Shop</option>
+                    <option value="Press Shop">Press Shop</option>
+                    <option value="Paint Shop">Paint Shop</option>
+                    <option value="PDC Shop">PDC Shop</option>
+                    <option value="Engine Shop">Engine Shop</option>
+                    <option value="OT Shop">OT Shop</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Line <span class="required">*</span></label>
+                <select id="processLine">
+                    <option value="">Select Line</option>
+                    <option value="Trim Line">Trim Line</option>
+                    <option value="Lower Chassis">Lower Chassis</option>
+                    <option value="Upper Chassis">Upper Chassis</option>
+                    <option value="Final Line">Final Line</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>System <span class="required">*</span></label>
+                <select id="processSystem">
+                    <option value="">Select System</option>
+                    <option value="Braking System">Braking System</option>
+                    <option value="Gluing System">Gluing System</option>
+                    <option value="Trim Fitment">Trim Fitment</option>
+                    <option value="Shower Test">Shower Test</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Auditee <span class="required">*</span></label>
+                <input
+                    type="text"
+                    id="processAuditee"
+                    placeholder="Enter auditee name"
+                >
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- FINDING / NC -->
+    <div class="form-card">
+
+        <div class="form-card-header">
+            <div>
+                <h2>Finding / NC</h2>
+                <p>Record the process audit observation</p>
+            </div>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group full-width">
+                <label>Finding / NC <span class="required">*</span></label>
+                <textarea
+                    id="processFinding"
+                    rows="5"
+                    placeholder="Enter the audit finding / non-conformity"
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Evidence / Image</label>
+                <input
+                    type="file"
+                    id="processEvidence"
+                    accept="image/*"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Category <span class="required">*</span></label>
+                <select id="processCategory">
+                    <option value="">Select Category</option>
+                    <option value="Method">Method</option>
+                    <option value="Machine">Machine</option>
+                    <option value="Man">Man</option>
+                    <option value="Material">Material</option>
+                    <option value="Environment">Environment</option>
+                    <option value="Product">Product</option>
+                </select>
+            </div>
+
+        </div>
+
+
+        <!-- SEVERITY -->
+        <div class="severity-section">
+
+            <label class="severity-title">
+                Severity <span class="required">*</span>
+            </label>
+
+            <div class="severity-options">
+
+                <button
+                    type="button"
+                    class="severity-option severity-red"
+                    data-severity="Red"
+                    id="processSeverityRed"
+                >
+                    <span class="severity-circle"></span>
+                    <span class="severity-label">Red</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="severity-option severity-yellow"
+                    data-severity="Yellow"
+                    id="processSeverityYellow"
+                >
+                    <span class="severity-circle"></span>
+                    <span class="severity-label">Yellow</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="severity-option severity-green"
+                    data-severity="Green"
+                    id="processSeverityGreen"
+                >
+                    <span class="severity-circle"></span>
+                    <span class="severity-label">Green</span>
+                </button>
+
+            </div>
+
+            <input
+                type="hidden"
+                id="processSeverity"
+                value=""
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- RESPONSIBILITY -->
+    <div class="form-card">
+
+        <div class="form-card-header">
+            <div>
+                <h2>Responsibility</h2>
+                <p>Assign responsibility for the finding</p>
+            </div>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Responsible Department <span class="required">*</span></label>
+                <select id="processResponsibleDepartment">
+                    <option value="">Select Department</option>
+                    <option value="Production">Production</option>
+                    <option value="SCM">SCM</option>
+                    <option value="Quality">Quality</option>
+                    <option value="R&D">R&D</option>
+                    <option value="ME">ME</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Responsible Person <span class="required">*</span></label>
+                <input
+                    type="text"
+                    id="processResponsiblePerson"
+                    placeholder="Enter responsible person"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Target Date <span class="required">*</span></label>
+                <input
+                    type="date"
+                    id="processTargetDate"
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ACTION BUTTONS -->
+    <div class="form-actions">
+
+        <button
+            type="button"
+            id="processSaveDraftBtn"
+            class="secondary-btn"
+        >
+            SAVE DRAFT
+        </button>
+
+        <button
+            type="button"
+            id="processSubmitFindingBtn"
+            class="primary-btn"
+        >
+            SUBMIT FINDING
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= PROCESS AUDIT - AUDITEE ACTION ================= -->
+<section id="processAuditeePage" class="page-section" style="display:none;">
+
+    <div class="page-header">
+        <div>
+            <h1>Process Audit</h1>
+            <p>Auditee Action</p>
+        </div>
+    </div>
+
+    <!-- FINDING DETAILS -->
+    <div class="form-card">
+
+        <div class="form-card-header">
+            <div>
+                <h2>Finding Details</h2>
+                <p>Review the finding raised during the audit</p>
+            </div>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Audit Number</label>
+                <input type="text" id="processActionAuditNumber" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Audit Date</label>
+                <input type="date" id="processActionAuditDate" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Auditor</label>
+                <input type="text" id="processActionAuditor" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Auditee</label>
+                <input type="text" id="processActionAuditee" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Shop</label>
+                <input type="text" id="processActionShop" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Line</label>
+                <input type="text" id="processActionLine" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>System</label>
+                <input type="text" id="processActionSystem" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Category</label>
+                <input type="text" id="processActionCategory" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Severity</label>
+                <input type="text" id="processActionSeverity" readonly>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Finding / NC</label>
+                <textarea id="processActionFinding" readonly></textarea>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- AUDITEE ACTION -->
+    <div class="form-card">
+
+        <div class="form-card-header">
+            <div>
+                <h2>Action by Auditee</h2>
+                <p>Provide the action taken against the finding</p>
+            </div>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group full-width">
+                <label>ICA / Immediate Corrective Action <span class="required">*</span></label>
+                <textarea
+                    id="processICA"
+                    rows="4"
+                    placeholder="Enter immediate corrective action"
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Action Status <span class="required">*</span></label>
+                <select id="processActionStatus">
+                    <option value="">Select Status</option>
+                    <option value="Not Started">Not Started</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Completion Date</label>
+                <input
+                    type="date"
+                    id="processActionCompletionDate"
+                >
+            </div>
+
+            <div class="form-group full-width">
+                <label>Action Evidence</label>
+                <input
+                    type="file"
+                    id="processActionEvidence"
+                    accept="image/*,.pdf"
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BUTTONS -->
+    <div class="form-actions">
+
+        <button
+            type="button"
+            id="processActionSaveDraftBtn"
+            class="secondary-btn"
+        >
+            SAVE DRAFT
+        </button>
+
+        <button
+            type="button"
+            id="processSubmitReviewBtn"
+            class="primary-btn"
+        >
+            SUBMIT FOR AUDITOR REVIEW
+        </button>
+
+    </div>
+
+</section>
+<!-- ================= PROCESS AUDIT - AUDITOR REVIEW ================= -->
+<section id="processReviewPage" class="page-section" style="display:none;">
+
+    <div class="page-header">
+        <div>
+            <h1>Process Audit</h1>
+            <p>Auditor Review & Status Check</p>
+        </div>
+    </div>
+
+
+    <!-- FINDING DETAILS -->
+    <div class="form-card">
+
+        <div class="form-card-header">
+            <div>
+                <h2>Finding Details</h2>
+                <p>Review the audit finding and auditee response</p>
+            </div>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Audit Number</label>
+                <input type="text" id="reviewAuditNumber" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Audit Date</label>
+                <input type="date" id="reviewAuditDate" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Auditor</label>
+                <input type="text" id="reviewAuditor" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Auditee</label>
+                <input type="text" id="reviewAuditee" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Shop</label>
+                <input type="text" id="reviewShop" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Line</label>
+                <input type="text" id="reviewLine" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>System</label>
+                <input type="text" id="reviewSystem" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Category</label>
+                <input type="text" id="reviewCategory" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Severity</label>
+                <input type="text" id="reviewSeverity" readonly>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Finding / NC</label>
+                <textarea id="reviewFinding" readonly></textarea>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- AUDITEE RESPONSE -->
+    <div class="form-card">
+
+        <div class="form-card-header">
+            <div>
+                <h2>Auditee Response</h2>
+                <p>Review the action submitted by the auditee</p>
+            </div>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group full-width">
+                <label>ICA / Immediate Corrective Action</label>
+                <textarea id="reviewICA" readonly></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Action Status</label>
+                <input type="text" id="reviewActionStatus" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Completion Date</label>
+                <input type="date" id="reviewCompletionDate" readonly>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Action Evidence</label>
+                <input type="text" id="reviewActionEvidence" readonly>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- AUDITOR REVIEW -->
+    <div class="form-card">
+
+        <div class="form-card-header">
+            <div>
+                <h2>Auditor Review</h2>
+                <p>Verify the action and determine the final status</p>
+            </div>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Review Date <span class="required">*</span></label>
+                <input
+                    type="date"
+                    id="processReviewDate"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Auditor Sign-off <span class="required">*</span></label>
+                <input
+                    type="text"
+                    id="processReviewSignOff"
+                    placeholder="Enter auditor name"
+                >
+            </div>
+
+            <div class="form-group full-width">
+                <label>Review Remarks <span class="required">*</span></label>
+                <textarea
+                    id="processReviewRemarks"
+                    rows="4"
+                    placeholder="Enter auditor review remarks"
+                ></textarea>
+            </div>
+
+        </div>
+
+
+        <!-- STATUS CHECK -->
+        <div class="status-check-section">
+
+            <label class="status-check-title">
+                Status Check <span class="required">*</span>
+            </label>
+
+            <div class="status-options">
+
+                <button
+                    type="button"
+                    class="status-option status-open"
+                    data-status="Open"
+                    id="processStatusOpen"
+                >
+                    <span class="status-circle"></span>
+                    <span class="status-label">Open</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="status-option status-progress"
+                    data-status="In Progress"
+                    id="processStatusProgress"
+                >
+                    <span class="status-circle"></span>
+                    <span class="status-label">In Progress</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="status-option status-closed"
+                    data-status="Closed"
+                    id="processStatusClosed"
+                >
+                    <span class="status-circle"></span>
+                    <span class="status-label">Closed</span>
+                </button>
+
+            </div>
+
+            <input
+                type="hidden"
+                id="processFinalStatus"
+                value=""
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- REVIEW ACTIONS -->
+    <div class="form-actions">
+
+        <button
+            type="button"
+            id="processReturnToAuditeeBtn"
+            class="secondary-btn"
+        >
+            RETURN TO AUDITEE
+        </button>
+
+        <button
+            type="button"
+            id="processCompleteReviewBtn"
+            class="primary-btn"
+        >
+            COMPLETE REVIEW
+        </button>
+
+    </div>
+
+</section>
+<!-- ================= PROCESS AUDIT - AUDITOR REVIEW ================= -->
+<section id="processReviewPage" class="page-section" style="display:none;">
+
+    <div class="page-header">
+        <div>
+            <h1>Process Audit</h1>
+            <p>Auditor Review & Status Check</p>
+        </div>
+    </div>
+
+
+    <!-- FINDING DETAILS -->
+    <div class="form-card">
+
+        <div class="form-card-header">
+            <div>
+                <h2>Finding Details</h2>
+                <p>Review the audit finding and auditee response</p>
+            </div>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Audit Number</label>
+                <input type="text" id="reviewAuditNumber" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Audit Date</label>
+                <input type="date" id="reviewAuditDate" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Auditor</label>
+                <input type="text" id="reviewAuditor" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Auditee</label>
+                <input type="text" id="reviewAuditee" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Shop</label>
+                <input type="text" id="reviewShop" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Line</label>
+                <input type="text" id="reviewLine" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>System</label>
+                <input type="text" id="reviewSystem" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Category</label>
+                <input type="text" id="reviewCategory" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Severity</label>
+                <input type="text" id="reviewSeverity" readonly>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Finding / NC</label>
+                <textarea id="reviewFinding" readonly></textarea>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- AUDITEE RESPONSE -->
+    <div class="form-card">
+
+        <div class="form-card-header">
+            <div>
+                <h2>Auditee Response</h2>
+                <p>Review the action submitted by the auditee</p>
+            </div>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group full-width">
+                <label>ICA / Immediate Corrective Action</label>
+                <textarea id="reviewICA" readonly></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Action Status</label>
+                <input type="text" id="reviewActionStatus" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Completion Date</label>
+                <input type="date" id="reviewCompletionDate" readonly>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Action Evidence</label>
+                <input type="text" id="reviewActionEvidence" readonly>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- AUDITOR REVIEW -->
+    <div class="form-card">
+
+        <div class="form-card-header">
+            <div>
+                <h2>Auditor Review</h2>
+                <p>Verify the action and determine the final status</p>
+            </div>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Review Date <span class="required">*</span></label>
+                <input
+                    type="date"
+                    id="processReviewDate"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Auditor Sign-off <span class="required">*</span></label>
+                <input
+                    type="text"
+                    id="processReviewSignOff"
+                    placeholder="Enter auditor name"
+                >
+            </div>
+
+            <div class="form-group full-width">
+                <label>Review Remarks <span class="required">*</span></label>
+                <textarea
+                    id="processReviewRemarks"
+                    rows="4"
+                    placeholder="Enter auditor review remarks"
+                ></textarea>
+            </div>
+
+        </div>
+
+
+        <!-- STATUS CHECK -->
+        <div class="status-check-section">
+
+            <label class="status-check-title">
+                Status Check <span class="required">*</span>
+            </label>
+
+            <div class="status-options">
+
+                <button
+                    type="button"
+                    class="status-option status-open"
+                    data-status="Open"
+                    id="processStatusOpen"
+                >
+                    <span class="status-circle"></span>
+                    <span class="status-label">Open</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="status-option status-progress"
+                    data-status="In Progress"
+                    id="processStatusProgress"
+                >
+                    <span class="status-circle"></span>
+                    <span class="status-label">In Progress</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="status-option status-closed"
+                    data-status="Closed"
+                    id="processStatusClosed"
+                >
+                    <span class="status-circle"></span>
+                    <span class="status-label">Closed</span>
+                </button>
+
+            </div>
+
+            <input
+                type="hidden"
+                id="processFinalStatus"
+                value=""
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- REVIEW ACTIONS -->
+    <div class="form-actions">
+
+        <button
+            type="button"
+            id="processReturnToAuditeeBtn"
+            class="secondary-btn"
+        >
+            RETURN TO AUDITEE
+        </button>
+
+        <button
+            type="button"
+            id="processCompleteReviewBtn"
+            class="primary-btn"
+        >
+            COMPLETE REVIEW
+        </button>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     PROCESS AUDIT — MASTER SHEET
+========================================================= -->
+
+<section id="processRecordsPage" class="page-section" style="display:none;">
+
+  <div class="page-header">
+    <div>
+      <h1>Process Audit Records</h1>
+      <p>Process Audit Master Sheet</p>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="form-card">
+
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label>Search</label>
+        <input
+          type="text"
+          id="processRecordSearch"
+          placeholder="Search Audit No., Finding, Auditee..."
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Audit Type</label>
+        <select id="processRecordAuditType">
+          <option value="">All</option>
+          <option>System Audit</option>
+          <option>Customer Focused Audit</option>
+          <option>Regulatory Audit</option>
+          <option>Process Parameters Audit</option>
+          <option>Manufacturing Readiness Audit</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Shop</label>
+        <select id="processRecordShop">
+          <option value="">All</option>
+          <option>BIW Shop</option>
+          <option>Press Shop</option>
+          <option>Paint Shop</option>
+          <option>PDC Shop</option>
+          <option>Engine Shop</option>
+          <option>OT Shop</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Category</label>
+        <select id="processRecordCategory">
+          <option value="">All</option>
+          <option>Method</option>
+          <option>Machine</option>
+          <option>Man</option>
+          <option>Material</option>
+          <option>Environment</option>
+          <option>Product</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Severity</label>
+        <select id="processRecordSeverity">
+          <option value="">All</option>
+          <option>Red</option>
+          <option>Yellow</option>
+          <option>Green</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Final Status</label>
+        <select id="processRecordFinalStatus">
+          <option value="">All</option>
+          <option>Open</option>
+          <option>In Progress</option>
+          <option>Closed</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="secondary-btn" id="processRecordResetBtn">
+        Reset
+      </button>
+    </div>
+
+  </div>
+
+
+  <!-- MASTER TABLE -->
+
+  <div class="form-card">
+
+    <div class="records-table-wrapper">
+
+      <table class="records-table">
+
+        <thead>
+          <tr>
+            <th>Audit No.</th>
+            <th>Audit Date</th>
+            <th>Audit Type</th>
+            <th>Auditor</th>
+            <th>Shop</th>
+            <th>Line</th>
+            <th>System</th>
+            <th>Auditee</th>
+            <th>Finding / NC</th>
+            <th>Category</th>
+            <th>Severity</th>
+            <th>Responsible Dept.</th>
+            <th>Responsible Person</th>
+            <th>Target Date</th>
+            <th>ICA</th>
+            <th>Action Status</th>
+            <th>Completion Date</th>
+            <th>Action Evidence</th>
+            <th>Review Date</th>
+            <th>Review Remarks</th>
+            <th>Auditor Sign-off</th>
+            <th>Final Status</th>
+            <th>Closure Date</th>
+            <th>Current Stage</th>
+            <th>Last Updated</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="processRecordsTableBody">
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+
+  <!-- RECORD DETAILS -->
+
+  <div
+    class="form-card"
+    id="processRecordDetails"
+    style="display:none;"
+  >
+
+    <div class="page-header">
+      <div>
+        <h2>Process Audit Details</h2>
+        <p>Complete Audit Record</p>
+      </div>
+    </div>
+
+
+    <!-- AUDIT INFORMATION -->
+
+    <h3 class="record-section-title">
+      Audit Information
+    </h3>
+
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label>Audit Number</label>
+        <input id="detailProcessAuditNumber" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Audit Date</label>
+        <input id="detailProcessAuditDate" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Auditor Name</label>
+        <input id="detailProcessAuditor" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Process Audit Type</label>
+        <input id="detailProcessAuditType" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Shop</label>
+        <input id="detailProcessShop" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Line</label>
+        <input id="detailProcessLine" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>System</label>
+        <input id="detailProcessSystem" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Auditee</label>
+        <input id="detailProcessAuditee" readonly>
+      </div>
+
+    </div>
+
+
+    <!-- FINDING -->
+
+    <h3 class="record-section-title">
+      Finding / NC
+    </h3>
+
+    <div class="form-grid">
+
+      <div class="form-group full-width">
+        <label>Finding / NC</label>
+        <textarea id="detailProcessFinding" readonly></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Category</label>
+        <input id="detailProcessCategory" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Severity</label>
+        <input id="detailProcessSeverity" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Responsible Department</label>
+        <input id="detailProcessResponsibleDepartment" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Responsible Person</label>
+        <input id="detailProcessResponsiblePerson" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Target Date</label>
+        <input id="detailProcessTargetDate" readonly>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Evidence</label>
+        <input id="detailProcessEvidence" readonly>
+      </div>
+
+    </div>
+
+
+    <!-- AUDITEE ACTION -->
+
+    <h3 class="record-section-title">
+      Auditee Action
+    </h3>
+
+    <div class="form-grid">
+
+      <div class="form-group full-width">
+        <label>Immediate Corrective Action / ICA</label>
+        <textarea id="detailProcessICA" readonly></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Action Status</label>
+        <input id="detailProcessActionStatus" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Action Completion Date</label>
+        <input id="detailProcessCompletionDate" readonly>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Action Evidence</label>
+        <input id="detailProcessActionEvidence" readonly>
+      </div>
+
+    </div>
+
+
+    <!-- AUDITOR REVIEW -->
+
+    <h3 class="record-section-title">
+      Auditor Review
+    </h3>
+
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label>Review Date</label>
+        <input id="detailProcessReviewDate" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Final Status</label>
+        <input id="detailProcessFinalStatus" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Auditor Sign-off</label>
+        <input id="detailProcessSignOff" readonly>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Review Remarks</label>
+        <textarea id="detailProcessReviewRemarks" readonly></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Closure Date</label>
+        <input id="detailProcessClosureDate" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Current Stage</label>
+        <input id="detailProcessCurrentStage" readonly>
+      </div>
+
+      <div class="form-group">
+        <label>Last Updated</label>
+        <input id="detailProcessLastUpdated" readonly>
+      </div>
+
+    </div>
+
+    <div class="form-actions">
+
+      <button
+        type="button"
+        class="secondary-btn"
+        id="closeProcessRecordDetailsBtn"
+      >
+        Close
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= PRODUCT AUDIT - AUDITOR ENTRY ================= -->
+<section id="productAuditorPage" class="page-section" style="display:none;">
+
+    <div class="page-header">
+        <div>
+            <h1>Product Audit</h1>
+            <p>Auditor Entry</p>
+        </div>
+    </div>
+
+    <div class="form-card">
+        <div class="form-card-header">
+            <div>
+                <h2>Audit Information</h2>
+                <p>Enter the product audit details</p>
+            </div>
+        </div>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Auditor Name <span class="required">*</span></label>
+                <input type="text" id="productAuditorName" placeholder="Enter auditor name">
+            </div>
+            <div class="form-group">
+                <label>Audit Date <span class="required">*</span></label>
+                <input type="date" id="productAuditDate">
+            </div>
+            <div class="form-group">
+                <label>Audit Type <span class="required">*</span></label>
+                <select id="productAuditType">
+                    <option value="">Select Audit Type</option>
+                    <option value="Project">Project</option>
+                    <option value="Regular">Regular</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Type <span class="required">*</span></label>
+                <select id="productType">
+                    <option value="">Select Type</option>
+                    <option value="Appearance">Appearance</option>
+                    <option value="Static Functional">Static Functional</option>
+                    <option value="Dynamic Functional">Dynamic Functional</option>
+                    <option value="VLO">VLO</option>
+                    <option value="Extended Drive">Extended Drive</option>
+                    <option value="Water Test">Water Test</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Category <span class="required">*</span></label>
+                <select id="productCategory" disabled>
+                    <option value="">Select Type first</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Severity <span class="required">*</span></label>
+                <select id="productSeverity">
+                    <option value="">Select Severity</option>
+                    <option value="300">300</option>
+                    <option value="100">100</option>
+                    <option value="50">50</option>
+                    <option value="30">30</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>System <span class="required">*</span></label>
+                <input type="text" id="productSystem" placeholder="Enter system">
+            </div>
+            <div class="form-group">
+                <label>Station <span class="required">*</span></label>
+                <input type="text" id="productStation" placeholder="Enter station">
+            </div>
+            <div class="form-group">
+                <label>Shop <span class="required">*</span></label>
+                <input type="text" id="productShop" placeholder="Enter shop">
+            </div>
+            <div class="form-group">
+                <label>Line <span class="required">*</span></label>
+                <input type="text" id="productLine" placeholder="Enter line">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-card">
+        <div class="form-card-header">
+            <div>
+                <h2>Finding / Observation</h2>
+                <p>Record the product audit finding</p>
+            </div>
+        </div>
+        <div class="form-grid">
+            <div class="form-group full-width">
+                <label>Finding / Observation <span class="required">*</span></label>
+                <textarea id="productFinding" rows="5" placeholder="Enter the finding or observation"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Evidence / Image</label>
+                <input type="file" id="productEvidence" accept="image/*">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-card">
+        <div class="form-card-header">
+            <div>
+                <h2>Responsibility</h2>
+                <p>Assign responsibility for the finding</p>
+            </div>
+        </div>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Responsible Department <span class="required">*</span></label>
+                <select id="productResponsibleDepartment">
+                    <option value="">Select Department</option>
+                    <option value="Production">Production</option>
+                    <option value="Quality">Quality</option>
+                    <option value="ME">ME</option>
+                    <option value="R&D">R&D</option>
+                    <option value="SCM">SCM</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Responsible Person <span class="required">*</span></label>
+                <input type="text" id="productResponsiblePerson" placeholder="Enter responsible person">
+            </div>
+            <div class="form-group">
+                <label>Target Date <span class="required">*</span></label>
+                <input type="date" id="productTargetDate">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-message" id="productAuditorMessage"></div>
+    <div class="form-actions product-form-actions">
+        <button type="button" id="addProductFindingBtn" class="secondary-btn">ADD FINDING <span id="productFindingCount">0</span></button>
+        <button type="button" id="saveProductDraftBtn" class="secondary-btn">SAVE DRAFT</button>
+        <button type="button" id="submitProductAuditBtn" class="primary-btn">SUBMIT AUDIT</button>
+    </div>
+
+</section>
+
+<!-- ================= PRODUCT AUDIT - AUDITEE ACTION ================= -->
+<section id="productAuditeePage" class="page-section" style="display:none;">
+
+    <div class="page-header">
+        <div>
+            <h1>Product Audit</h1>
+            <p>Auditee Action</p>
+        </div>
+    </div>
+
+    <div class="form-card">
+        <div class="form-card-header">
+            <div>
+                <h2>Finding Details</h2>
+                <p>Review the finding raised during the audit</p>
+            </div>
+        </div>
+        <div class="form-grid">
+            <div class="form-group"><label>Audit Number</label><input id="productActionAuditNumber" readonly></div>
+            <div class="form-group"><label>Audit Date</label><input id="productActionAuditDate" readonly></div>
+            <div class="form-group"><label>Auditor</label><input id="productActionAuditor" readonly></div>
+            <div class="form-group"><label>Audit Type</label><input id="productActionAuditType" readonly></div>
+            <div class="form-group"><label>Category</label><input id="productActionCategory" readonly></div>
+            <div class="form-group"><label>Severity</label><input id="productActionSeverity" readonly></div>
+            <div class="form-group"><label>Type</label><input id="productActionProductType" readonly></div>
+            <div class="form-group"><label>System</label><input id="productActionSystem" readonly></div>
+            <div class="form-group"><label>Station</label><input id="productActionStation" readonly></div>
+            <div class="form-group"><label>Shop</label><input id="productActionShop" readonly></div>
+            <div class="form-group"><label>Line</label><input id="productActionLine" readonly></div>
+            <div class="form-group full-width"><label>Finding / Observation</label><textarea id="productActionFinding" readonly></textarea></div>
+        </div>
+    </div>
+
+    <div class="form-card">
+        <div class="form-card-header">
+            <div>
+                <h2>Action by Auditee</h2>
+                <p>Provide the correction and corrective action</p>
+            </div>
+        </div>
+        <div class="form-grid">
+            <div class="form-group full-width"><label>ICA / Immediate Action <span class="required">*</span></label><textarea id="productICA" rows="3"></textarea></div>
+            <div class="form-group full-width"><label>Root Cause <span class="required">*</span></label><textarea id="productRootCause" rows="3"></textarea></div>
+            <div class="form-group full-width"><label>Corrective Action <span class="required">*</span></label><textarea id="productCorrectiveAction" rows="3"></textarea></div>
+            <div class="form-group"><label>Target Date <span class="required">*</span></label><input type="date" id="productActionTargetDate"></div>
+            <div class="form-group"><label>Responsible Person <span class="required">*</span></label><input id="productActionResponsiblePerson"></div>
+            <div class="form-group"><label>Action Completion Date</label><input type="date" id="productActionCompletionDate"></div>
+            <div class="form-group"><label>Action Status <span class="required">*</span></label><select id="productActionStatus"><option value="">Select Status</option><option>In Progress</option><option>Completed</option></select></div>
+            <div class="form-group full-width"><label>Action Evidence</label><input type="file" id="productActionEvidence" accept="image/*,.pdf"></div>
+        </div>
+    </div>
+
+    <div class="form-message" id="productAuditeeMessage"></div>
+    <div class="form-actions product-form-actions">
+        <button type="button" id="saveProductActionBtn" class="secondary-btn">SAVE DRAFT</button>
+        <button type="button" id="submitProductActionBtn" class="primary-btn">SUBMIT FOR AUDITOR REVIEW</button>
+    </div>
+
+</section>
+
+<!-- ================= PRODUCT AUDIT - AUDITOR REVIEW ================= -->
+<section id="productReviewPage" class="page-section" style="display:none;">
+
+    <div class="page-header">
+        <div>
+            <h1>Product Audit</h1>
+            <p>Auditor Review &amp; Closure</p>
+        </div>
+    </div>
+
+    <div class="form-card">
+        <div class="form-card-header"><div><h2>Finding and Auditee Action</h2><p>Review the submitted product audit response</p></div></div>
+        <div class="form-grid">
+            <div class="form-group"><label>Audit Number</label><input id="productReviewAuditNumber" readonly></div>
+            <div class="form-group"><label>Auditor</label><input id="productReviewAuditor" readonly></div>
+            <div class="form-group"><label>Audit Type</label><input id="productReviewAuditType" readonly></div>
+            <div class="form-group"><label>Category</label><input id="productReviewCategory" readonly></div>
+            <div class="form-group"><label>Severity</label><input id="productReviewSeverity" readonly></div>
+            <div class="form-group"><label>Type</label><input id="productReviewProductType" readonly></div>
+            <div class="form-group"><label>System</label><input id="productReviewSystem" readonly></div>
+            <div class="form-group"><label>Station</label><input id="productReviewStation" readonly></div>
+            <div class="form-group"><label>Shop</label><input id="productReviewShop" readonly></div>
+            <div class="form-group"><label>Line</label><input id="productReviewLine" readonly></div>
+            <div class="form-group full-width"><label>Finding / Observation</label><textarea id="productReviewFinding" readonly></textarea></div>
+            <div class="form-group full-width"><label>ICA / Immediate Action</label><textarea id="productReviewICA" readonly></textarea></div>
+            <div class="form-group full-width"><label>Root Cause</label><textarea id="productReviewRootCause" readonly></textarea></div>
+            <div class="form-group full-width"><label>Corrective Action</label><textarea id="productReviewCorrectiveAction" readonly></textarea></div>
+            <div class="form-group"><label>Action Status</label><input id="productReviewActionStatus" readonly></div>
+            <div class="form-group"><label>Completion Date</label><input id="productReviewCompletionDate" readonly></div>
+        </div>
+    </div>
+
+    <div class="form-card">
+        <div class="form-card-header"><div><h2>Auditor Verification</h2><p>Determine the final product audit status</p></div></div>
+        <div class="form-grid">
+            <div class="form-group"><label>Review Date <span class="required">*</span></label><input type="date" id="productReviewDate"></div>
+            <div class="form-group"><label>Auditor Sign-off <span class="required">*</span></label><input id="productReviewSignOff"></div>
+            <div class="form-group full-width"><label>Review Remarks <span class="required">*</span></label><textarea id="productReviewRemarks" rows="4"></textarea></div>
+        </div>
+        <div class="product-status-section">
+            <label>Status <span class="required">*</span></label>
+            <div class="product-status-options">
+                <button type="button" class="product-status-option product-status-open" data-status="Open">OPEN</button>
+                <button type="button" class="product-status-option product-status-progress" data-status="In Progress">IN PROGRESS</button>
+                <button type="button" class="product-status-option product-status-closed" data-status="Closed">CLOSED</button>
+            </div>
+            <input type="hidden" id="productFinalStatus">
+        </div>
+    </div>
+
+    <div class="form-message" id="productReviewMessage"></div>
+    <div class="form-actions product-form-actions">
+        <button type="button" id="returnProductToAuditeeBtn" class="secondary-btn">RETURN TO AUDITEE</button>
+        <button type="button" id="completeProductReviewBtn" class="primary-btn">COMPLETE REVIEW</button>
+    </div>
+
+</section>
+
+<!-- ================= PRODUCT AUDIT RECORDS ================= -->
+<section id="productRecordsPage" class="page-section" style="display:none;">
+
+    <div class="page-header"><div><h1>Product Audit Records</h1><p>Product Audit Master Sheet</p></div></div>
+    <div class="form-card product-record-filters">
+        <div class="form-grid">
+            <div class="form-group"><label>Search</label><input id="productRecordSearch" placeholder="Search audit number, finding, auditor..."></div>
+            <div class="form-group"><label>Audit Type</label><select id="productRecordType"><option value="">All</option><option>Project</option><option>Regular</option></select></div>
+            <div class="form-group"><label>Type</label><select id="productRecordInspectionType"><option value="">All</option><option>Appearance</option><option>Static Functional</option><option>Dynamic Functional</option><option>VLO</option><option>Extended Drive</option><option>Water Test</option></select></div>
+            <div class="form-group"><label>Category</label><select id="productRecordCategory"><option value="">All</option><option>ISD</option><option>Fitment</option><option>Missing</option><option>Paint</option><option>Inoperative</option><option>Intermittent</option><option>Failure</option><option>Alignment</option><option>Contact/Rubbing</option><option>Clamping/Clipping</option><option>Routing</option><option>Others</option><option disabled>Noise (To be confirmed)</option><option disabled>Vibration (To be confirmed)</option></select></div>
+            <div class="form-group"><label>Status</label><select id="productRecordStatus"><option value="">All</option><option>Open</option><option>In Progress</option><option>Closed</option></select></div>
+        </div>
+        <div class="form-actions"><button type="button" id="resetProductRecordsBtn" class="secondary-btn">RESET</button></div>
+    </div>
+    <div class="form-card">
+        <div class="records-table-wrapper">
+            <table class="records-table product-records-table">
+                <thead><tr><th>Audit No.</th><th>Observation</th><th>Date</th><th>Audit Type</th><th>Type</th><th>Category</th><th>Severity</th><th>System</th><th>Station</th><th>Shop</th><th>Line</th><th>Auditor</th><th>Finding / Observation</th><th>Responsible Person</th><th>Target Date</th><th>Action Status</th><th>Final Status</th><th>Current Stage</th><th>Last Updated</th></tr></thead>
+                <tbody id="productRecordsTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+</main>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
